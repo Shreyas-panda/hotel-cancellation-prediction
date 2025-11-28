@@ -48,6 +48,8 @@ def evaluate_models(models, X_test, y_test):
     results_df = pd.DataFrame(results)
     print("\n--- Model Performance ---")
     print(results_df)
+    import os
+    os.makedirs("models", exist_ok=True)
     results_df.to_csv("models/evaluation_results.csv", index=False)
     
     # Identify Best Model (based on F1 Score)
